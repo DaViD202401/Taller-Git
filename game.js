@@ -1,20 +1,17 @@
 var max = 10;
 var rest = 0;
-var x = Math.floor(Math.random() * 10) + 1;
+var x = Math.floor(Math.random() * max) + 1;
 
-var num = prompt("Adivina el número entre 1 y " + max);
-
-console.log("Número al azar:", x);
-console.log("Tu número:", num);
-
-function compareNums(x, num) {
+document.getElementById("btnGuess").addEventListener("click", function () {
+    var num = parseInt(document.getElementById("inputNum").value);
+    
     rest = Math.abs(x - num);
-    console.log("Diferencia:", rest);
-    if (rest < 4) {
-        console.log("Caliente");
-    } else {
-        console.log("Frío");
-    }
-}
 
-compareNums(x, num);
+    if (num === x) {
+        document.getElementById("resultado").textContent = "¡Correcto! El número era " + x;
+    } else if (rest < 4) {
+        document.getElementById("resultado").textContent = "Caliente";
+    } else {
+        document.getElementById("resultado").textContent = "Frío";
+    }
+});
