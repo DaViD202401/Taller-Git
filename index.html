@@ -3,13 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <title>Adivina el número</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #83a4d4, #b6fbff);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1em;
+        }
+        input {
+            padding: 8px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        button {
+            padding: 8px 16px;
+            margin-left: 5px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
 </head>
 <body>
     <h1>Adivina el número</h1>
     <p>Ingresa un número del 1 al 10:</p>
-    <input type="number" id="inputNum" min="1" max="10">
-    <button id="btnGuess">Adivinar</button>
-
+    <div>
+        <input type="number" id="inputNum" min="1" max="10">
+        <button id="btnGuess">Adivinar</button>
+    </div>
     <p id="resultado"></p>
 
     <script src="game.js"></script>
